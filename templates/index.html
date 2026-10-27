@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Placement Predictor</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f7f6; text-align: center; padding: 50px; }
+        .container { background: white; padding: 30px; border-radius: 8px; box-shadow: 0px 0px 10px rgba(0,0,0,0.1); display: inline-block; }
+        input { margin: 10px 0; padding: 8px; width: 200px; }
+        button { background: #4CAF50; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Student Placement Predictor (MLOps)</h2>
+        <form action="/predict" method="POST">
+            <input type="text" name="cgpa" placeholder="Enter CGPA (e.g., 8.2)" required><br>
+            <input type="text" name="iq" placeholder="Enter IQ (e.g., 110)" required><br>
+            <input type="text" name="backlogs" placeholder="Enter Backlogs (e.g., 0)" required><br>
+            <button type="submit">Predict Placement</button>
+        </form>
+        {% if prediction_text %}
+            <h3>{{ prediction_text }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
